@@ -5,14 +5,16 @@ import { favouriteAnimals, favouriteFoods } from "@/assets/data/favourites";
 import type { User } from "@/server/types";
 import { trpc } from "@/utils/trpc";
 import { useRouter } from "next/navigation";
+import Modal from "@/components/modal";
+import { useState } from "react";
 
 export default function Profile({ user }: { user: User }) {
   const router = useRouter();
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const deleteUser = trpc.deleteUser.useMutation({
     onSettled: () => {
-      alert("User Deleted");
-      router.push("/");
+      setShowSuccessModal(true);
     },
   });
 
@@ -49,6 +51,22 @@ export default function Profile({ user }: { user: User }) {
         onClick={removeUser}
         className="bg-red-500 text-white"
       />
+
+      {showSuccessModal ? (
+        <Modal
+          title={"Delete"}
+          desc={"User deleted successfully"}
+          actions={
+            <Button
+              label={"Close"}
+              onClick={() => {
+                setShowSuccessModal(false);
+                router.push("/");
+              }}
+            />
+          }
+        />
+      ) : null}
     </>
   );
 }

@@ -8,8 +8,11 @@ import FavouriteSelect from "@/components/create-user-form/favourite-select";
 import { favouriteAnimals, favouriteFoods } from "@/assets/data/favourites";
 import Button from "@/components/button";
 import { UserSchema } from "@/server/types";
+import Modal from "@/components/modal";
 
 export default function CreateUserForm() {
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [bio, setBio] = useState("");
@@ -21,7 +24,7 @@ export default function CreateUserForm() {
 
   const addUser = trpc.addUser.useMutation({
     onSettled: () => {
-      alert("Added User");
+      setShowSuccessModal(true);
       clear();
     },
   });
@@ -118,6 +121,19 @@ export default function CreateUserForm() {
         <Button label="Clear" onClick={clear} />
         <Button label="Add" onClick={add} className="bg-primaryGreen" />
       </div>
+
+      {showSuccessModal ? (
+        <Modal
+          title={"Added"}
+          desc={"User added successfully"}
+          actions={
+            <Button
+              label={"Close"}
+              onClick={() => setShowSuccessModal(false)}
+            />
+          }
+        />
+      ) : null}
     </div>
   );
 }

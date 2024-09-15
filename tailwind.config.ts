@@ -17,6 +17,7 @@ const config: Config = {
         darkSlateGrey: "#061c23",
         primaryGreen: "#0fd86d",
         white: "#FFF",
+        fadedBlack: "rgba(0, 0, 0, 0.4)",
       },
     },
   },

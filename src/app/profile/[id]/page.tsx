@@ -12,7 +12,7 @@ export default async function ProfilePage({
   const [user] = await serverClient.getUser({ id });
 
   if (!user) {
-    return null;
+    return <PageTitle title="USER NOT FOUND" />;
   }
 
   return (
