@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import * as FontDefinitions from "./font-definitions";
-import "../assets/styles/globals.css";
+
+// Components
 import Navigation from "@/components/navigation";
 import TrpcProvider from "@/components/trpc-client";
+
+// Fonts
+import * as FontDefinitions from "./font-definitions";
+
+// Styles
+import "assets/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Searchland Tech Test - Sam Thomas",

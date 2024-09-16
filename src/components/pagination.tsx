@@ -1,5 +1,8 @@
-import { PAGE_LIMIT } from "@/assets/data/constants";
+// TW Merge
 import { twMerge } from "tailwind-merge";
+
+// Data
+import { PAGE_LIMIT } from "@/assets/data/constants";
 
 function PaginationItem({
   item,

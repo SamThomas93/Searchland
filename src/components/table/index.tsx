@@ -1,6 +1,9 @@
-import { TableColumn, TableRow } from "@/assets/types/globals";
+// Components
 import HeaderCell from "@/components/table/header-cell";
 import Row from "@/components/table/row";
+
+// Types
+import type { TableColumn, TableRow } from "@/assets/types/globals";
 
 export default function Table({
   rows,

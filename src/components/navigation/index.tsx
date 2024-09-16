@@ -1,4 +1,7 @@
+// Components
 import NavItem from "@/components/navigation/nav-item";
+
+// Types
 import type { NavItem as NavItemType } from "@/assets/types/globals";
 
 export default function Navigation() {

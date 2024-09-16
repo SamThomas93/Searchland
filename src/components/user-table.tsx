@@ -1,12 +1,20 @@
 "use client";
 
-import Table from "@/components/table";
-import { trpc } from "@/utils/trpc";
-import { favouriteAnimals, favouriteFoods } from "@/assets/data/favourites";
-import { TableColumn, TableRow } from "@/assets/types/globals";
-import Pagination from "./pagination";
 import { useState } from "react";
+
+// TRPC
+import { trpc } from "@/utils/trpc";
+
+// Data
+import { favouriteAnimals, favouriteFoods } from "@/assets/data/favourites";
 import { PAGE_LIMIT } from "@/assets/data/constants";
+
+// Components
+import Table from "@/components/table";
+import Pagination from "@/components/pagination";
+
+// Types
+import type { TableColumn, TableRow } from "@/assets/types/globals";
 
 export default function UserTable() {
   const [page, setPage] = useState(0);

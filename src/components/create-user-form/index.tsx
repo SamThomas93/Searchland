@@ -1,14 +1,22 @@
 "use client";
 
-import { trpc } from "@/utils/trpc";
 import { useMemo, useState } from "react";
+
+// TRPC
+import { trpc } from "@/utils/trpc";
+
+// Data
+import { favouriteAnimals, favouriteFoods } from "@/assets/data/favourites";
+
+// Components
 import TextField from "@/components/create-user-form/text-field";
 import TextArea from "@/components/create-user-form/text-area";
 import FavouriteSelect from "@/components/create-user-form/favourite-select";
-import { favouriteAnimals, favouriteFoods } from "@/assets/data/favourites";
 import Button from "@/components/button";
-import { UserSchema } from "@/server/types";
 import Modal from "@/components/modal";
+
+// Types
+import { UserSchema } from "@/server/types";
 
 export default function CreateUserForm() {
   const [showSuccessModal, setShowSuccessModal] = useState(false);

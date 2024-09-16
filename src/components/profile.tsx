@@ -1,12 +1,20 @@
 "use client";
 
-import Button from "@/components/button";
-import { favouriteAnimals, favouriteFoods } from "@/assets/data/favourites";
-import type { User } from "@/server/types";
-import { trpc } from "@/utils/trpc";
-import { useRouter } from "next/navigation";
-import Modal from "@/components/modal";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+// TRPC
+import { trpc } from "@/utils/trpc";
+
+// Data
+import { favouriteAnimals, favouriteFoods } from "@/assets/data/favourites";
+
+// Components
+import Button from "@/components/button";
+import Modal from "@/components/modal";
+
+// Types
+import type { User } from "@/server/types";
 
 export default function Profile({ user }: { user: User }) {
   const router = useRouter();

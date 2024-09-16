@@ -1,5 +1,7 @@
-import { TableColumn, TableRow } from "@/assets/types/globals";
 import { useRouter } from "next/navigation";
+
+// Components
+import { TableColumn, TableRow } from "@/assets/types/globals";
 
 export default function Row({
   row,

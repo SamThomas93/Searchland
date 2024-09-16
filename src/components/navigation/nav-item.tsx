@@ -1,5 +1,9 @@
 import Link from "next/link";
+
+// TW Merge
 import { twMerge } from "tailwind-merge";
+
+// Types
 import type { NavItem as NavItemType } from "@/assets/types/globals";
 
 export default function NavItem({ navItem }: { navItem: NavItemType }) {

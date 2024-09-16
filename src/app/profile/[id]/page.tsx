@@ -1,5 +1,8 @@
-import PageTitle from "@/components/page-title";
+// TRPC
 import { serverClient } from "@/server/server-client";
+
+// Components
+import PageTitle from "@/components/page-title";
 import Profile from "@/components/profile";
 
 export default async function ProfilePage({
