@@ -49,7 +49,7 @@ export default function Profile({ user }: { user: User }) {
       <Button
         label="Delete"
         onClick={removeUser}
-        className="bg-red-500 text-white"
+        className="bg-red-500 text-darkSlateGrey"
       />
 
       {showSuccessModal ? (
